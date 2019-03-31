@@ -19,10 +19,6 @@ id 		name
 3 		Barisal University
 4 		Dhaka University
 
-students:
-id 		name 		class_id 		
-1		Neher		-
-
 categories:
 id 		name 
 1 		goydda
@@ -52,13 +48,46 @@ topics:
 id 		name  	class_id 	author_id 	category_id 
 
 questions:
-id 		question 	op_1 	op_2 	op_3 	op_4 	op_5	ans  	topic_id  	exam_id
+id exam_id  subject_id  topic_id 	question 		op_1 	op_2 	op_3 	op_4 	op_5	ans 	exam_count
+1	psc		math		addition	115 + 200 = ?	225		315		400		295		-		op_2 	5
 
-solutions:
-id 		question_id 	solution_by 	solution 		
+# question belongs to a subject, topic
+# question belongs to a exam
+# question has many times to many boards or many exams
 
 board_question:
-id board_id 	question_id 	year_id
+id  board_id 	question_id 	year_id	 	question_position
+1 	Barisal 	1 				2019		10
+2 	Barisal 	1 				2017		15
+3 	Barisal 	1 				2013		17
+4 	Barisal 	1 				2009		30
+5 	Dhaka 		1 				2019		20
+ 
+
+solutions:
+id 		question_id 	solution_by 	solution	
+
+students:
+id 	class_id  institute_id	name 	 		points					
+1	psc		  1				Dipti Moni		19
+
+exam_student:
+id 	exam_id 	student_id
+1 	psc 		Dipti Moni
+
+quizs:
+id  name  			marks 	level
+1 	Worm Up test 	20 		1
+
+quiz_results:
+id 	exam_id 	quiz_id 	student_id 	marks 
+1 	jsc 		1 			Dipti Moni 	19
+
+
+institutes:
+id 	name 				category_id 	 	upozila_id  established	
+1   ABC Gov Pry School 	primary education 	kathalia    1970
+
 
 # student can register 
 # student can log in his/her account
@@ -74,7 +103,4 @@ id board_id 	question_id 	year_id
 # student can earn points by problem solving
 # student can claim gifs by his/her points
 # student can clamin gifts if he/she earn best score in quize test
-
-
-
 
